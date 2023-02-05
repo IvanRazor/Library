@@ -1,6 +1,5 @@
 ﻿using Library.Interfaces;
 using Library.Model;
-using System;
 using System.ComponentModel;
 using System.Windows;
 
@@ -35,7 +34,7 @@ namespace Library
                 e.ListChangedType == ListChangedType.ItemDeleted ||
                 e.ListChangedType == ListChangedType.ItemChanged)
             {
-
+                this.AutorService.SaveAutors(autors);
             }
         }
     }

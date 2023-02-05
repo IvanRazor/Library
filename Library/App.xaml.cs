@@ -1,8 +1,12 @@
 ﻿using Library.Interfaces;
+using Library.Model;
 using Library.Services;
+using Library.Services.Interfaces;
+using Library.Services.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace Library;
 
@@ -21,6 +25,7 @@ public partial class App : Application
 				services.AddSingleton<MainWindow>();
 				services.AddSingleton<AutorWindow>();
 				services.AddTransient<IAutorService, AutorService>();
+				services.AddTransient<IRepositry<Autor>, AutorRepositry>();
             })
 			.Build();
 	}

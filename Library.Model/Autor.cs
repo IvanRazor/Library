@@ -1,9 +1,12 @@
 ﻿namespace Library.Model
 {
-    public class Autor
+    public class Autor : Person
     {
-        public string Id { get; set; }
+        public Autor()
+        {
+            Id = Guid.NewGuid().ToString();
+        }
 
-        public Person PersonInfo { get; set; }
+        public string Id { get; set; }
     }
 }

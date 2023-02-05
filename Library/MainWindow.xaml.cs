@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Library.Interfaces;
+using Library.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,18 @@ namespace Library
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IAutorService autorService)
         {
             InitializeComponent();
+            AutorService = autorService;
         }
+
+        public IAutorService AutorService { get; }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            AutorWindow autorWindow = new AutorWindow(AutorService);
+            autorWindow.Show();
         }
     }
 }

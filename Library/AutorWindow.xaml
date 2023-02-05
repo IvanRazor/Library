@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Autors" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgAutorList">
+        <DataGrid x:Name="dgAutorList" Loaded="dgAutorList_Loaded" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="First Name" Width="200"></DataGridTextColumn>
-                <DataGridTextColumn Header="Second Name" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=FirstName}" IsReadOnly="False" Header="First Name" Width="50*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=SecondName}" IsReadOnly="False" Header="Second Name" Width="50*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

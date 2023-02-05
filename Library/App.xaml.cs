@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Library.Interfaces;
+using Library.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 
@@ -17,7 +19,9 @@ public partial class App : Application
 			.ConfigureServices((hostContext, services) =>
 			{
 				services.AddSingleton<MainWindow>();
-			})
+				services.AddSingleton<AutorWindow>();
+				services.AddTransient<IAutorService, AutorService>();
+            })
 			.Build();
 	}
 
